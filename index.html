@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(318, 45%, 44%);
+    }
+    .attribution2 {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution2 a {
+      color: hsl(318, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="side-bar">
+        <div class="side-overlay">
+          <img class="for-desk" src="assets/images/bg-sidebar-desktop.svg" alt="">
+          <img class="for-mob" src="assets/images/bg-sidebar-mobile.svg" alt="">
+        </div>
+        <div class="overlay">
+          <div class="steps">
+            <div class="num active">1</div>
+            <div class="text">
+              <div class="step-title">Step 1</div>
+              <div class="div"> Your info</div>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="num num2">2</div>
+            <div class="text">
+              <div class="step-title">Step 2</div>
+              <div class="div">Select plan</div>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="num num3">3</div>
+            <div class="text">
+              <div class="step-title">Step 3</div>
+              <div class="div"> Add-ons</div>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="num num4">4</div>
+            <div class="text">
+              <div class="step-title">Step 4</div>
+              <div class="div"> Summary </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="steping">
+        <div class="step-one">
+          <div>
+
+            <div class="steping-head">
+              <h1> Personal info</h1>
+            </div>
+            <div class="steping-desc">
+              Please provide your name, email address, and phone number.
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="name">
+              <div class="input-error-name"></div>
+              <div class="inp-title">Name</div>
+              <input id="name" type="text" placeholder="e.g. Stephen King">
+            </div>
+            <div class="email">
+              <div class="input-error-email"></div>
+              <div class="inp-title">Email Address</div>
+              <input id="email" type="email" placeholder="e.g. stephenking@lorem.com">
+            </div>
+            <div class="number">
+              <div class="input-error-number"></div>
+              <div class="inp-title">Phone Number</div>
+              <input id="number" type="number" placeholder="e.g. +1 234 567 890">
+            </div>
+
+          </div>
+
+          <div class="last-btn">
+            <button class="next-btn" onclick="togglerOne()">Next Step</button>
+          </div>
+
+
+        </div>
+        <div class="step-two none">
+          <div>
+
+            <div class="steping-head">
+              <h1>Select your plan</h1>
+            </div>
+            <div class="steping-desc">
+              You have the option of monthly or yearly billing.
+            </div>
+          </div>
+          <div class="icons">
+
+            <div class="acrade acrades acrade-active">
+              <div class="acrade-overlay"></div>
+              <div class="img">
+                <img src="assets/images/icon-arcade.svg" alt="">
+              </div>
+              <div class="acrade-text">
+                <div class="acrade-tit">
+                  <h2>Arcade</h2>
+                </div>
+                <div class="acrade-pricing">
+                  $<span class="ac-pr">9</span>/<span class="ac-dr1">mo</span>
+                </div>
+              </div>
+            </div>
+            <div class="acrade advanced">
+              <div class="acrade2-overlay none"></div>
+              <div class="img">
+                <img src="assets/images/icon-advanced.svg" alt="">
+              </div>
+              <div class="acrade-text">
+                <div class="acrade-tit">
+                  <h2>Advanced</h2>
+                </div>
+                <div class="acrade-pricing">
+                  $<span class="ac-pr2">12</span>/<span class="ac-dr2">mo</span>
+                </div>
+              </div>
+            </div>
+            <div class="acrade pro">
+              <div class="acrade3-overlay none"></div>
+              <div class="img">
+                <img src="assets/images/icon-pro.svg" alt="">
+              </div>
+              <div class="acrade-text">
+                <div class="acrade-tit">
+                  <h2>Pro</h2>
+                </div>
+                <div class="acrade-pricing">
+                  $<span class="ac-pr3">15</span>/<span class="ac-dr3">mo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mon-yea">
+            <div class="mon active-col">
+              Monthly
+            </div>
+            <div class="box">
+              <div class="ball"></div>
+            </div>
+            <div class="yea">
+              Yearly
+            </div>
+          </div>
+          <div class="last-two">
+            <div class="back" onclick="backOne()">
+              Go Back
+            </div>
+            <button class="next-btn" onclick="togglerTwo()">Next Step </button>
+          </div>
+
+        </div>
+        <div class="step-three none">
+          <div>
+            <div class="steping-head">
+              <h1>Pick add-ons</h1>
+            </div>
+            <div class="steping-desc">
+              Add-ons help enhance your gaming experience.
+            </div>
+          </div>
+          <div class="check-items">
+
+            <div class="check-lines cl1">
+              <div class="acrade-overlay-check lies1 none"></div>
+
+              <div class="checbox">
+                <div class="check-box check1">
+                  <div class="icon"><i class="fa-solid fa-check"></i></div>
+                </div>
+              </div>
+              <div class="check-text">
+                <div class="check-text-left">
+                  <div class="check-tit">
+                    <h2>Online service</h2>
+                  </div>
+                  <div class="check-desc">Access to multiplayer games</div>
+                </div>
+                <div class="check-mon-pricing">+$<span class="cl-p">1</span>/<span class="cl-d">mo</span> </div>
+              </div>
+            </div>
+            <div class="check-lines cl2">
+              <div class="acrade-overlay-check lies2 none"></div>
+
+              <div class="checbox">
+                <div class="check-box check2">
+                  <div class="icon"><i class="fa-solid fa-check"></i></div>
+                </div>
+              </div>
+              <div class="check-text">
+                <div class="check-text-left">
+                  <div class="check-tit">
+                    <h2>Larger storage</h2>
+                  </div>
+                  <div class="check-desc">Extra 1TB of cloud save</div>
+                </div>
+                <div class="check-mon-pricing">+$<span class="cl-p2">2</span>/<span class="cl-d2">mo</span> </div>
+              </div>
+            </div>
+            <div class="check-lines cl3">
+              <div class="acrade-overlay-check lies3 none"></div>
+
+              <div class="checbox">
+                <div class="check-box check3">
+                  <div class="icon"><i class="fa-solid fa-check"></i></div>
+                </div>
+              </div>
+              <div class="check-text">
+                <div class="check-text-left">
+                  <div class="check-tit">
+                    <h2>Customizable Profile</h2>
+                  </div>
+                  <div class="check-desc">Custom theme on your profile</div>
+                </div>
+                <div class="check-mon-pricing">+$<span class="cl-p3">2</span>/<span class="cl-d3">mo</span> </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="last-two">
+            <div class="back" onclick="backTwo()">
+              Go Back
+            </div>
+            <button class="next-btn" onclick="togglerThree()">Next Step </button>
+          </div>
+        </div>
+        <div class="step-four none">
+          <div>
+
+            <div class="steping-head">
+              <h1> Finishing up</h1>
+            </div>
+            <div class="steping-desc">
+              Double-check everything looks OK before confirming.
+            </div>
+          </div>
+          <div class="payment-box">
+            <div class="payment">
+              <div class="left-side-payment-box">
+                <div class="package-tit">
+                  <h2><span class="package">Acrade</span>( <span class="duration"></span> )</h2>
+                </div>
+                <div class="change">
+                  change
+                </div>
+              </div>
+              <div class="right-side-payment-box">
+
+                <h2>+$<span class="total-payment"></span>/<span class="duration2"></span></h2>
+              </div>
+            </div>
+            <div class="services">
+              <!-- <li>
+                <div class="ser-name">online services</div>
+                <div class="ser-charges">+$<span class="ser-pay"></span>/<span></span> </div>
+              </li> -->
+            </div>
+          </div>
+          <div class="t-amount">
+            <div class="left-t">
+              Total ( <span class="akhri-duration"></span> )
+            </div>
+            <div class="right-t">
+              <div class="amount">
+                <h2>+$<span class="akhri-bill"></span>/<span class="akhri-dura"></span> </h2>
+              </div>
+            </div>
+          </div>
+          <div class="last-two">
+            <div class="back" onclick="backThree()">
+              Go Back
+            </div>
+            <button onclick="togglerFour()" class="next-btn">Confirm</button>
+          </div>
+        </div>
+        <div class="step-five none">
+          <div style="height: 100%; display: flex; justify-content: center; align-items: center;flex-direction: column;text-align: center;gap: 30px;">
+            <div class="thank-img">
+              <img src="assets/images/icon-thank-you.svg" alt="">
+            </div>
+            <div class="steping-head">
+              <h1 style="font-weight: 700;">Thank you!</h1>
+            </div>
+            <div class="steping-desc five-p " style="">
+
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free
+              to email us at support@loremgaming.com.
+            </div>
+          </div>
+        </div>
+
+        <div class="attribution2 color-light">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="https://github.com/ubaidrashid/" target="_blank">ubaidaa-oss</a>.
+        </div>
+      </div>
+    </div>
+    <div class="attribution color-light">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/ubaidrashid/" target="_blank">ubaidaa-oss</a>.
+    </div>
+  </main>
+
+
+  <!-- Step 5 start -->
+
+  <!-- 
+-->
+
+  <!-- Step 5 end -->
+
+  <!-- 
+  
+  33333333333-->
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
